@@ -1,0 +1,16 @@
+
+<div>
+    <md-button class="md-fab md-mini" ng-disabled="false" ng-click="$ctrl.edit=!$ctrl.edit">
+        <md-icon md-svg-src="icons/ic_mode_edit_black_24px.svg" class="s36"></md-icon>
+    </md-button>
+    <md-button class="md-fab md-mini" ng-disabled="!$ctrl.edit">
+        <md-icon md-svg-src="icons/ic_save_black_24px.svg" class="s36"></md-icon>
+    </md-button>
+    <md-button class="md-fab " style="background-color: white">
+        <md-icon md-svg-src="icons/ic_attach_file_black_24px.svg" class="s36"></md-icon>
+    </md-button>
+
+</div>
+<div>
+    <json-viewer json-data="$ctrl.jsonData" show-edit="$ctrl.edit"></json-viewer>
+</div>

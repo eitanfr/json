@@ -1,0 +1,6 @@
+<div class="jsonView" ng-if="$ctrl.showEdit" >
+    <json child="$ctrl.jsonData" default-collapsed="false" type="object" ng-if="$ctrl.showEdit"></json>
+</div>
+<div ng-if="!$ctrl.showEdit">
+    <div json-human="$ctrl.jsonData" ></div>
+</div>

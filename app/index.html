@@ -4,15 +4,25 @@
     <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/jquery-ui/jquery-ui.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-ui-sortable/sortable.min.js"></script>
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+
+    <!--for material-->
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.js"></script>
+
+    <link href="bower_components/angular-material/angular-material.css" rel="stylesheet" type="text/css"/>
     <link href="app.css" rel="stylesheet" type="text/css"/>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
     <script src="bower_components/JSONedit/js/directives.js"></script>
     <script src="bower_components/lodash/dist/lodash.min.js"></script>
     <script src="bower_components/angular-json-human/dist/angular-json-human.min.js"></script>
     <script src="app.js"></script>
+    <script src="component/json-viewer.js"></script>
+    <script src="component/json-editor/json-editor.js"></script>
     <link href="bower_components/JSONedit/css/styles.css" rel="stylesheet" type="text/css"/>
     <link href="bower_components/angular-json-human/dist/angular-json-human.min.css" rel="stylesheet" type="text/css"/>
 </head>
@@ -22,17 +32,8 @@
                                                 alt="Fork me on GitHub"></a>
 
 <div id="mainView" ng-controller="MainViewCtrl">
-    <h2>JSONedit</h2>
 
-    <div class="jsonView animate-if" ng-if="!shown" >
-        <json child="jsonData" default-collapsed="false" type="object"></json>
-    </div>
-
-    <hr>
-    <div ng-if="shown" class="animate-if">
-        <div json-human="jsonData"></div>
-    </div>
-    <button ng-click="shown=!shown">edit</button>
+    <json-editor json-data="jsonData"></json-editor>
 </div>
 
 
