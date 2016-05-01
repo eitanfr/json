@@ -1,15 +1,22 @@
 
 <div>
-    <md-button class="md-fab md-mini" ng-disabled="false" ng-click="$ctrl.edit=!$ctrl.edit">
-        <md-icon md-svg-src="icons/ic_mode_edit_black_24px.svg" class="s36"></md-icon>
-    </md-button>
-    <md-button class="md-fab md-mini" ng-disabled="!$ctrl.edit">
-        <md-icon md-svg-src="icons/ic_save_black_24px.svg" class="s36"></md-icon>
-    </md-button>
-    <md-button class="md-fab " style="background-color: white">
-        <md-icon md-svg-src="icons/ic_attach_file_black_24px.svg" class="s36"></md-icon>
-    </md-button>
-
+    <md-fab-speed-dial  md-direction="left" md-open="dial.isOpen"
+                        class="md-scale md-hover-full"
+                        ng-mouseenter="dial.isOpen=true" ng-mouseleave="dial.isOpen=false">
+        <md-fab-trigger>
+            <file-reader json-file="$ctrl.jsonData" filename="jsonFilename"></file-reader>
+        </md-fab-trigger>
+        <md-fab-actions>
+            <div>
+                <file-saver json-file="$ctrl.jsonData" filename="jsonFilename" ></file-saver>
+            </div>
+            <div>
+                <md-button class="md-fab md-mini md-primary md-hue-3" ng-disabled="!$ctrl.isEditable()" ng-click="$ctrl.edit=!$ctrl.edit">
+                    <md-icon md-svg-src="icons/ic_mode_edit_black_24px.svg" class="s36"></md-icon>
+                </md-button>
+            </div>
+        </md-fab-actions>
+    </md-fab-speed-dial>
 </div>
 <div>
     <json-viewer json-data="$ctrl.jsonData" show-edit="$ctrl.edit"></json-viewer>

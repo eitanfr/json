@@ -5,5 +5,8 @@ angular.module('exampleApp').component('jsonEditor',{
     },
     controller: function(){
         this.edit = false;
+        this.isEditable = function(){
+          return angular.isDefined(this.jsonData);
+        };
     }
 });
