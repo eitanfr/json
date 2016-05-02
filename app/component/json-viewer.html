@@ -1,6 +1,6 @@
-<div class="jsonView" ng-if="$ctrl.showEdit" >
+<div class="jsonView animate-if" ng-if="$ctrl.showEdit" >
     <json child="$ctrl.jsonData" default-collapsed="false" type="object" ng-if="$ctrl.showEdit"></json>
 </div>
-<div ng-if="!$ctrl.showEdit">
+<div ng-if="!$ctrl.showEdit" class="animate-if">
     <div json-human="$ctrl.jsonData" ></div>
 </div>
