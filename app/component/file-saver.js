@@ -12,7 +12,7 @@ angular.module('exampleApp').component('fileSaver', {
             var data = this.jsonFile;
 
             if (!data) {
-                console.error('No data');
+                alert('No data');
                 return;
             }
 
